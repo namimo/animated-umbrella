@@ -13,7 +13,7 @@ export const db = knex({
     // password: process.env.PGPASSWORD,
     // database: process.env.PGDATABASE,
     // port: Number(process.env.PGPORT),
-    // filename: "./mydb.sqlite",
+    filename: "./mydb.sqlite",
   },
   useNullAsDefault: true,
 })

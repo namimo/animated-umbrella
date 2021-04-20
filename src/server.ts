@@ -18,6 +18,10 @@ if (process.env.NODE_ENV === "production") {
   server.register(fastifyStatic, {
     root: path.join(__dirname, "../client/dist"),
   })
+
+  server.setNotFoundHandler((_request, reply) => {
+    reply.sendFile("index.html")
+  })
 }
 
 // Routes
