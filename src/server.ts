@@ -19,8 +19,12 @@ if (process.env.NODE_ENV === "production") {
     root: path.join(__dirname, "../client/dist"),
   })
 
+  server.get("/giveaway", (_request, reply) => {
+    reply.sendFile("giveaway.html")
+  })
+
   server.setNotFoundHandler((_request, reply) => {
-    reply.sendFile("index.html")
+    reply.sendFile("not-found.html")
   })
 }
 
